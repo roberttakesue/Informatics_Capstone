@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<body>
+
+<div class="">
+	<form method="post" action="">
+		Enter a number: <input type="number" name="num"><br>
+	<input type="submit" value="translate">
+</form>
+</div>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $num = $_POST['num'];
+  if (empty($num)) {
+    echo "Name is empty";
+  } else {
+    echo $num;
+  }
+}
+?>
+</body>
+</html>

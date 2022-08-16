@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+<link rel="stylesheet" type="text/css" href="https://cgi.luddy.indiana.edu/~team10/style.css">
+<meta name="google-signin-client_id" content="813520753419-lapus6k8rtuf3gttjfdamua7g5rh80f8.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<title>Page Title</title>
+	<body>
+
+		<div class="">
+			this works
+		</div>
+		<div class="g-signin2" data-onsuccess="onSignIn"></div>
+		<div id="content"></div>
+	</body>
+	
+	<script>
+		function onSignIn(googleUser) {
+			var profile = googleUser.getBasicProfile()
+		
+			console.log(googleUser.getBasicProfile())
+			
+			var element = document.querySelector('#content')
+			element.innerText = profile.getName();
+				
+			var image = document.createElement('img')
+			image.setAttribute('src', profile.getImageUrl())
+			element.append(image)
+		}
+	</script>
+</html>
